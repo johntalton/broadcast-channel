@@ -1,0 +1,66 @@
+{
+  "name": "@johntalton/broadcast-channel",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.ts",
+  "exports": {
+    "import": "./src/index.ts"
+  },
+  "type": "module",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "lib/**/*.js.map"
+  ],
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc -p .",
+    "build:watch": "npm run build -- -w"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@johntalton/eslint-config/ts",
+      "@johntalton/eslint-config/node"
+    ],
+    "rules": {
+      "import/no-nodejs-modules": "off"
+    }
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.spec.ts",
+      ".git",
+      ".vscode",
+      "node_modules"
+    ],
+    "watch": [
+      "src",
+      "private"
+    ],
+    "exec": "ts-node src/index.ts",
+    "ext": "ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johntalton/broadcast-channel.git"
+  },
+  "author": "johntalton@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johntalton/broadcast-channel/issues"
+  },
+  "homepage": "https://github.com/johntalton/broadcast-channel#readme",
+  "devDependencies": {
+    "@johntalton/eslint-config": "github:johntalton/eslint-config",
+    "@types/node": "^14.14.17",
+    "nodemon": "^2.0.4",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}
